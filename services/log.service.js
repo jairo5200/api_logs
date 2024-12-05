@@ -21,6 +21,25 @@ class LogService{
     async find(){
         return this.Log;
     }
+
+    async create(data){
+        const log = this.Log.find((log) => log.id === data.id);
+        if (log) {
+            log.message = data.message
+            } else
+            {
+                this.Log.push(data);
+                }
+                return data;
+    }
+
+    async delete(id){
+        const index = this.Log.findIndex((log) => log.id == id);
+        if (index !== -1) {
+            this.Log.splice(index, 1);
+            }
+            return { message: 'Log deleted' };
+    }
 }
 
 module.exports = LogService;
