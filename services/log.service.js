@@ -3,19 +3,7 @@
 class LogService{
 
     constructor(){
-        this.Log = [{
-            id: 1,
-            message: 'Log message',
-        },
-        {
-            id: 2,
-            message: 'Another log message',
-        },
-        {
-            id: 3,
-            message: 'Yet another log message',
-        }
-    ]
+        this.Log = [];
     }
 
     async find(){
@@ -23,14 +11,8 @@ class LogService{
     }
 
     async create(data){
-        const log = this.Log.find((log) => log.id === data.id);
-        if (log) {
-            log.message = data.message
-            } else
-            {
-                this.Log.push(data);
-                }
-                return data;
+        this.Log.push(data);
+        return(data);
     }
 
     async delete(id){
