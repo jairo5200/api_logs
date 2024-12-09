@@ -9,6 +9,7 @@ const status = Joi.number().integer();
 const responseTime = Joi.string();
 const contentLength = Joi.string();
 
+// esquema usado para la creacion de un log
 const createLogSchema = Joi.object({
     email: email.required(),
     date: date.required(),
@@ -19,8 +20,10 @@ const createLogSchema = Joi.object({
     contentLength: contentLength.required(),
 });
 
+// esquema usado para la busqueda de un log por id
 const getLogSchema = Joi.object({
     id: id.required(),
 });
 
+//exportamos los esquemas para ser usados en las validaciones
 module.exports = {createLogSchema,getLogSchema};

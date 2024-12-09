@@ -1,4 +1,4 @@
-// importamos el modulo del modelo de logs para incializarlo
+// importamos el modulo del modelo de logs para inicializarlo
 const {Log, logSchema} = require('./log.model')
 
 

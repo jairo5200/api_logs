@@ -61,5 +61,5 @@ class Log extends Model{
     }
 }
 
-// importamos el nombre de la tabla, su esquema y la clase User para que puedan ser utilizados en otros archivos
+// importamos el nombre de la tabla, su esquema y la clase Log para que puedan ser utilizados en otros archivos
 module.exports = {LOG_TABLE,logSchema,Log};

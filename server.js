@@ -10,8 +10,10 @@ const port = config.port || 3002;
 // le decimos a la api que vamos a usar formato json
 app.use(express.json());
 
+// enrutamiento de nuestra api
 routerApi(app);
 
+// segun el tipo de error se ejecuta la funcion para mostrar el error
 app.use(logErrors);
 app.use(ormErrorHandler);
 app.use(boomErrorHandler);
