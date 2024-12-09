@@ -17,8 +17,8 @@ class LogService{
     }
 
     async delete(id){
-        const log = await models.User.findOne({where:{id:id}})
-        if (!user) {
+        const log = await models.Log.findOne({where:{id:id}})
+        if (!log) {
             throw boom.notFound('log not found');
         }
         await log.destroy();
