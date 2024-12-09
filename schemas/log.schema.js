@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 const id = Joi.number().integer();
 const email = Joi.string().email().min(1).max(50);
-const date = Joi.date();
+const date = Joi.string();
 const method = Joi.string();
 const url = Joi.string();
 const status = Joi.number().integer();

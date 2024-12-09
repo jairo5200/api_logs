@@ -9,14 +9,14 @@ const logSchema = {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
+        allowNull: false,
         },
     email:{
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
+        allowNull: true,
         },
     date:{
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     method:{
@@ -33,12 +33,12 @@ const logSchema = {
     },
     responseTime:{
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         field: 'response_time',
     },
     contentLength:{
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         field: 'content_length'
     },
     // Creamos un campo para la fecha de creación

@@ -1,26 +1,29 @@
 /* const {models} = require('../libs/sequelize'); */
-
+const {models} = require('../libs/sequelize');
+const boom =  require('@hapi/boom');
 class LogService{
 
     constructor(){
-        this.Log = [];
     }
 
     async find(){
-        return this.Log;
+        const logs = await models.Log.findAll();
+        return logs;
     }
 
     async create(data){
-        this.Log.push(data);
-        return(data);
+        const log = await models.Log.create(data);
+        return log;
     }
 
     async delete(id){
-        const index = this.Log.findIndex((log) => log.id == id);
-        if (index !== -1) {
-            this.Log.splice(index, 1);
-            }
-            return { message: 'Log deleted' };
+        const log = await models.User.findOne({where:{id:id}})
+        await log.destroy();
+        const rta = {
+            message: "log deleted",
+            id: id,
+        }
+        return rta;
     }
 }
 
