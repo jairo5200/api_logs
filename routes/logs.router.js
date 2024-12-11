@@ -18,7 +18,6 @@ router.get('/',
 
 // ruta para crear un log
 router.post('/',
-    validatorHandler(createLogSchema,'body'),
     async  (req, res, next) => {
         const body = req.body;
         const newUser = await service.create(body);
